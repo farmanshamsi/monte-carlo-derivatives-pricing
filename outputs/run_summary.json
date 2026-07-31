@@ -1,0 +1,203 @@
+{
+  "configuration": {
+    "paths": 100000,
+    "steps": 100,
+    "seed": 42,
+    "spot": 100.0,
+    "strike": 100.0,
+    "maturity": 1.0,
+    "rate": 0.05,
+    "volatility": 0.2
+  },
+  "runtime": {
+    "python": "3.13.5",
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "scipy": "1.15.3"
+  },
+  "analytical_benchmarks": {
+    "European call": 10.450583572185565,
+    "European put": 5.573526022256971,
+    "Cash-or-nothing call": 0.5323248154537634
+  },
+  "baseline": [
+    {
+      "contract": "European call",
+      "price": 10.420541193153111,
+      "standard_error": 0.046769902520818175,
+      "confidence_low": 10.328873868651858,
+      "confidence_high": 10.512208517654365,
+      "analytical": 10.450583572185565,
+      "absolute_error": 0.030042379032453326,
+      "z_score": 0.6423442729879731,
+      "raw_paths": 100000,
+      "independent_samples": 100000,
+      "method": "exact",
+      "variance_reduction": "none",
+      "control_beta": null
+    },
+    {
+      "contract": "European call",
+      "price": 10.461072093982235,
+      "standard_error": 0.04650210036816826,
+      "confidence_low": 10.36992965205516,
+      "confidence_high": 10.552214535909311,
+      "analytical": 10.450583572185565,
+      "absolute_error": 0.01048852179667037,
+      "z_score": 0.22554942064186848,
+      "raw_paths": 100000,
+      "independent_samples": 100000,
+      "method": "euler",
+      "variance_reduction": "none",
+      "control_beta": null
+    },
+    {
+      "contract": "European call",
+      "price": 10.457145388836313,
+      "standard_error": 0.04654737179810848,
+      "confidence_low": 10.365914216537025,
+      "confidence_high": 10.548376561135601,
+      "analytical": 10.450583572185565,
+      "absolute_error": 0.006561816650748398,
+      "z_score": 0.1409707228844024,
+      "raw_paths": 100000,
+      "independent_samples": 100000,
+      "method": "milstein",
+      "variance_reduction": "none",
+      "control_beta": null
+    },
+    {
+      "contract": "European put",
+      "price": 5.612203851328206,
+      "standard_error": 0.027520080321280845,
+      "confidence_low": 5.558265485046847,
+      "confidence_high": 5.666142217609566,
+      "analytical": 5.573526022256971,
+      "absolute_error": 0.038677829071235514,
+      "z_score": 1.4054402683311413,
+      "raw_paths": 100000,
+      "independent_samples": 100000,
+      "method": "exact",
+      "variance_reduction": "none",
+      "control_beta": null
+    },
+    {
+      "contract": "European put",
+      "price": 5.57098887015157,
+      "standard_error": 0.02745346502630529,
+      "confidence_low": 5.517181067449182,
+      "confidence_high": 5.624796672853958,
+      "analytical": 5.573526022256971,
+      "absolute_error": 0.0025371521054005086,
+      "z_score": 0.09241646192819256,
+      "raw_paths": 100000,
+      "independent_samples": 100000,
+      "method": "euler",
+      "variance_reduction": "none",
+      "control_beta": null
+    },
+    {
+      "contract": "European put",
+      "price": 5.56810944053827,
+      "standard_error": 0.02741112854033427,
+      "confidence_low": 5.514384615823617,
+      "confidence_high": 5.6218342652529225,
+      "analytical": 5.573526022256971,
+      "absolute_error": 0.0054165817187010745,
+      "z_score": 0.19760520661273806,
+      "raw_paths": 100000,
+      "independent_samples": 100000,
+      "method": "milstein",
+      "variance_reduction": "none",
+      "control_beta": null
+    },
+    {
+      "contract": "Cash-or-nothing call",
+      "price": 0.5303104041591481,
+      "standard_error": 0.0014940547780964671,
+      "confidence_low": 0.527382110603149,
+      "confidence_high": 0.5332386977151472,
+      "analytical": 0.5323248154537634,
+      "absolute_error": 0.002014411294615326,
+      "z_score": 1.3482847644862328,
+      "raw_paths": 100000,
+      "independent_samples": 100000,
+      "method": "exact",
+      "variance_reduction": "none",
+      "control_beta": null
+    },
+    {
+      "contract": "Cash-or-nothing call",
+      "price": 0.5333638506117955,
+      "standard_error": 0.0014929052893392274,
+      "confidence_low": 0.5304378100123612,
+      "confidence_high": 0.5362898912112297,
+      "analytical": 0.5323248154537634,
+      "absolute_error": 0.0010390351580320534,
+      "z_score": 0.6959819658030277,
+      "raw_paths": 100000,
+      "independent_samples": 100000,
+      "method": "euler",
+      "variance_reduction": "none",
+      "control_beta": null
+    },
+    {
+      "contract": "Cash-or-nothing call",
+      "price": 0.532831162134075,
+      "standard_error": 0.0014931103835628208,
+      "confidence_low": 0.5299047195573491,
+      "confidence_high": 0.5357576047108009,
+      "analytical": 0.5323248154537634,
+      "absolute_error": 0.0005063466803115757,
+      "z_score": 0.33912206752145446,
+      "raw_paths": 100000,
+      "independent_samples": 100000,
+      "method": "milstein",
+      "variance_reduction": "none",
+      "control_beta": null
+    }
+  ],
+  "variance_reduction_percent": {
+    "European call": {
+      "antithetic": 29.2774217428573,
+      "control": 61.780885549618226,
+      "antithetic_control": 81.1890918691678
+    },
+    "Cash-or-nothing call": {
+      "antithetic": 53.560444972994325,
+      "control": 35.98509700369637,
+      "antithetic_control": 55.11944533753559
+    }
+  },
+  "strong_convergence_order": {
+    "Euler-Maruyama": 0.49842898815878006,
+    "Milstein": 0.9944048087945208
+  },
+  "path_count_standard_error_slope": -0.4928639976690757,
+  "call_greeks": [
+    {
+      "greek": "delta",
+      "mc_estimate": 0.6400858523793151,
+      "standard_error": 0.0018237253694365382,
+      "analytical": 0.6368306511756191,
+      "absolute_error": 0.0032552012036960454,
+      "z_score": 1.7849185289898
+    },
+    {
+      "greek": "vega",
+      "mc_estimate": 38.013124598367725,
+      "standard_error": 0.24152474602512214,
+      "analytical": 37.52403469169379,
+      "absolute_error": 0.48908990667393226,
+      "z_score": 2.0250095061607465
+    },
+    {
+      "greek": "rho",
+      "mc_estimate": 53.46004488636463,
+      "standard_error": 0.14924217390128858,
+      "analytical": 53.232481545376345,
+      "absolute_error": 0.2275633409882829,
+      "z_score": 1.5247924567139939
+    }
+  ]
+}
